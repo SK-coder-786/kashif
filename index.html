@@ -58,7 +58,77 @@
             padding: 2rem;
         }
 
-        /* Glassmorphism card */
+        /* Header with new SK logo */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-top: 1rem;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .sk-logo {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(58, 134, 255, 0.4);
+            overflow: hidden;
+        }
+
+        .sk-logo::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -8px;
+            right: -8px;
+        }
+
+        .sk-logo::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            bottom: -5px;
+            left: -5px;
+        }
+
+        .sk-initials {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+
+        /* Rest of your existing CSS remains the same */
         .glass-card {
             background: var(--glass);
             backdrop-filter: blur(10px);
@@ -72,26 +142,6 @@
         .glass-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--neon-glow), 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 3rem;
-            padding-top: 1rem;
-        }
-
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: 2px;
         }
 
         .nav-links {
@@ -387,14 +437,32 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .logo-text {
+                display: none;
+            }
+            
+            .sk-logo {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .sk-initials {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
+        <!-- Updated Header with SK Logo -->
         <header>
-            <div class="logo">KASHIF</div>
+            <div class="logo-wrapper">
+                <div class="sk-logo">
+                    <div class="sk-initials">SK</div>
+                </div>
+                <div class="logo-text">KASHIF</div>
+            </div>
             <nav>
                 <div class="nav-links">
                     <a href="#about" class="nav-link">About</a>
@@ -405,7 +473,7 @@
             </nav>
         </header>
 
-        <!-- Hero Section -->
+        <!-- Rest of your existing HTML remains the same -->
         <section id="hero">
             <div class="glass-card hero-content">
                 <h1 class="hero-title">Hi, I'm <span>Kashif Ansari</span></h1>
@@ -613,7 +681,7 @@
                 `*Message:* ${message}`;
             
             // Redirect to WhatsApp with pre-filled message
-            window.open(`https://wa.me/918989898989?text=${whatsappMessage}`, '_blank');
+            window.open(`https://wa.me/916394893485?text=${whatsappMessage}`, '_blank');
             
             // Optional: Reset form after submission
             this.reset();

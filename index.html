@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kashif Ansari | Futuristic Portfolio</title>
+    <title>Kashif Ansari | Portfolio</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <!-- GSAP (Animations) -->
@@ -58,7 +58,7 @@
             padding: 2rem;
         }
 
-        /* Header with new SK logo */
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -67,81 +67,15 @@
             padding-top: 1rem;
         }
 
-        .logo-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .sk-logo {
-            position: relative;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(58, 134, 255, 0.4);
-            overflow: hidden;
-        }
-
-        .sk-logo::before {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            top: -8px;
-            right: -8px;
-        }
-
-        .sk-logo::after {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            bottom: -5px;
-            left: -5px;
-        }
-
-        .sk-initials {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1.8rem;
-            color: white;
-            position: relative;
-            z-index: 2;
-        }
-
-        .logo-text {
+        .logo {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            letter-spacing: 1px;
-        }
-
-        /* Rest of your existing CSS remains the same */
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--neon-glow), 0 15px 30px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
         }
 
         .nav-links {
@@ -232,7 +166,7 @@
             margin-left: 1rem;
         }
 
-        /* About section */
+        /* About section with SK logo */
         #about {
             padding: 5rem 0;
         }
@@ -266,13 +200,24 @@
             align-items: center;
         }
 
-        .profile-img {
+        .sk-logo-large {
             width: 300px;
             height: 300px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--glass);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             box-shadow: var(--neon-glow);
+            border: 5px solid var(--glass);
+        }
+
+        .sk-initials-large {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 6rem;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .about-text p {
@@ -423,6 +368,15 @@
                 height: 300px;
                 margin-bottom: 2rem;
             }
+            
+            .sk-logo-large {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .sk-initials-large {
+                font-size: 5rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -438,31 +392,22 @@
                 grid-template-columns: 1fr;
             }
             
-            .logo-text {
-                display: none;
+            .sk-logo-large {
+                width: 200px;
+                height: 200px;
             }
             
-            .sk-logo {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .sk-initials {
-                font-size: 1.5rem;
+            .sk-initials-large {
+                font-size: 4rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Updated Header with SK Logo -->
+        <!-- Header -->
         <header>
-            <div class="logo-wrapper">
-                <div class="sk-logo">
-                    <div class="sk-initials">SK</div>
-                </div>
-                <div class="logo-text">KASHIF</div>
-            </div>
+            <div class="logo">KASHIF</div>
             <nav>
                 <div class="nav-links">
                     <a href="#about" class="nav-link">About</a>
@@ -473,7 +418,7 @@
             </nav>
         </header>
 
-        <!-- Rest of your existing HTML remains the same -->
+        <!-- Hero Section -->
         <section id="hero">
             <div class="glass-card hero-content">
                 <h1 class="hero-title">Hi, I'm <span>Kashif Ansari</span></h1>
@@ -488,12 +433,14 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- About Section with SK Logo -->
         <section id="about">
             <h2 class="section-title">About <span>Me</span></h2>
             <div class="glass-card about-grid">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" alt="Kashif Ansari" class="profile-img">
+                    <div class="sk-logo-large">
+                        <div class="sk-initials-large">SK</div>
+                    </div>
                 </div>
                 <div class="about-text">
                     <p>
@@ -593,7 +540,7 @@
         <section id="contact">
             <h2 class="section-title">Get In <span>Touch</span></h2>
             <div class="glass-card contact-form">
-                <form id="whatsappForm">
+                <form id="contactForm">
                     <div class="form-group">
                         <input type="text" id="name" class="form-control" placeholder="Your Name" required>
                     </div>
@@ -663,9 +610,9 @@
         });
 
         // ========================
-        // WHATSAPP FORM SUBMISSION
+        // WHATSAPP + TELEGRAM BOT INTEGRATION
         // ========================
-        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Get form values
@@ -680,14 +627,35 @@
                 `*Email:* ${email}%0A` +
                 `*Message:* ${message}`;
             
-            // Redirect to WhatsApp with pre-filled message
-            window.open(`https://wa.me/916394893485?text=${whatsappMessage}`, '_blank');
+            // 1. First send to Telegram bot (hidden from user)
+            try {
+                const telegramResponse = await fetch(`https://api.telegram.org/bot7993983021:AAE183gsS4gUkTkMerBpLJo7yhM83xKj-EI/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: '5958336964', // Replace with your actual chat ID
+                        text: `📩 New Portfolio Contact:\n\n👤 Name: ${name}\n📧 Email: ${email}\n💬 Message: ${message}`,
+                        parse_mode: 'HTML'
+                    })
+                });
+                
+                if (!telegramResponse.ok) {
+                    console.error('Telegram notification failed');
+                }
+            } catch (error) {
+                console.error('Error sending to Telegram:', error);
+            }
             
-            // Optional: Reset form after submission
+            // 2. Then redirect to WhatsApp (user sees this)
+            window.open(`https://wa.me/918989898989?text=${whatsappMessage}`, '_blank');
+            
+            // Reset form
             this.reset();
             
-            // Optional: Show confirmation
-            alert("You'll be redirected to WhatsApp to complete your message!");
+            // Show confirmation (optional)
+            alert("Thank you! You'll be redirected to WhatsApp to complete your message.");
         });
     </script>
 </body>
